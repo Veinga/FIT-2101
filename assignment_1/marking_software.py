@@ -9,7 +9,7 @@ imageMonash= "monash-university-malaysia_2.png"
 
 def popMessage(msg):
     pop = tk.Tk()
-
+    pop.geometry('60x60')
     def quit():
         pop.destroy()
     
