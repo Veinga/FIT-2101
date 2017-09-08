@@ -54,7 +54,7 @@ class Mark(tk.Tk):
         self.update_idletasks()
         self.geometry(geometry)
         frame.tkraise()
-
+        
 # Class that opens the the first frame
 # Inherits all parent classes method and attributes
 # Parent class in this case is Mark
@@ -96,9 +96,9 @@ class HomePage(tk.Frame):
         button1 = ttk.Button(self, text = "SAVE RECORDS", style = 'white/black.TButton', 
                             command =lambda: (controller.show_frame("StudentPage"), popMessage("Added the record!"))) # moves to student page by calling frame PageOne
         button1.grid(row=15,column=0, sticky="n")
-
-
-        button2 = ttk.Button(self, text = "EXIT", style = 'white/black.TButton')
+            
+        button2 = ttk.Button(self, text = "EXIT", style = 'white/black.TButton',
+                             command = controller.destroy)
         button2.grid(row=15,column=0, sticky="ne")
     
         # creating a canvas to insert an image        
@@ -116,7 +116,6 @@ class HomePage(tk.Frame):
         self.image = ImageTk.PhotoImage(resized)
         self.display.delete("img")
         self.display.create_image(0, 0, image=self.image, anchor="nw", tags="IMG")
-
 
 class StudentPage(tk.Frame):
 
